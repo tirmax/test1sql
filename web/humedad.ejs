@@ -1,0 +1,82 @@
+<header>
+    <%- include('header')-%>
+</header>
+<br/>
+<h1>HUMEDAD <%=modelo.length%></h1>
+
+<div class="container mt-5">
+    <div class="row">
+        <h5>ENG</h5>
+    </div>
+    <div class="col-md-3">
+        <select name="humedad">
+                <%if(modelo){%>
+                <%for (var i=0; i<modelo.length; i++) {%>
+                    <option> <%=modelo[i].ENG %></option>
+                    <%}%>
+                <%}%>
+            
+        </select>
+    </div>
+</div>
+
+<div class="container" >
+    <div class=" row mt-5">
+    <div class="col-md-3">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>ENG</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <% for (const humedad of modelo) { %>
+                <tr>
+                    <td>
+                        <%=humedad.id%>
+                    </td>
+                    <td>
+                        <%=humedad.ENG%>
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+    
+</div>
+</div>
+
+
+
+</header>
+            <body>
+                <canvas id="myChart" width="50" height="50"></canvas>
+                <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
+
+                <script>
+                    var ctx = document.getElementById('myChart').getContext('2d');
+                    var myChart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            label:'asd',
+                            datasets: [{
+                                label: 'humedad',
+                                data: [], 
+                                backgroundColor: [
+                                    'rgba(255, 99, 132, 0.2)'
+                                ],
+                                borderColor: ['black'],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                </script>
+            </body>

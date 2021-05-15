@@ -1,0 +1,78 @@
+<header>
+    <%- include('header')-%>
+    <meta charset="utf-8">
+    <meta name ="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/estilos.css">
+
+    
+</header>
+<br/>
+<h1>INDICE AMBIENTAL  <%=mo.length%></h1>
+
+<div class="container">
+<div class="row mt-5">
+<div class="col-md-7">
+
+
+<div class="col-md-4">
+<div class="card">
+    <div class="card-body">
+        <form action="/indiceambiental" method="post">
+            <div class="form-horizontal">
+        <div class="form-group">
+            <label>INGRESAR LA TEMPERATURA</label>
+            <input type="text" name="temperatura" placeholder="Temperatura" class="form-comtrol">
+        </div>
+        <br/>
+        <div class="form-group">
+            <label>INGRESAR EL NIVEL</label>
+            <input type="text" name="nivel" placeholder="Nivel" class="form-comtrol">
+        </div>
+        <br/>
+        <div class="form-group">
+            <label>INGRESAR LA HUMEDAD</label>
+            <input type="text" name="humedad" placeholder="Humedad" class="form-comtrol">
+        </div>
+        <br/>
+        <button type="submit" class="btn btn-primary">
+            AÑADIR
+        </button>
+        </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<br/>
+<div id="centro" > 
+<div class="col-md-3">
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>INA</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <% for (const indiceambiental of mo) { %>
+                <tr>
+                    <td>
+                        <%=indiceambiental.id%>
+                    </td>
+                    <td>
+                        <%=indiceambiental.INA%>
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+</header>
